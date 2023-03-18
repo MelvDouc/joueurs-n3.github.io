@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npx tsc && npx babel assets/js-lib --out-dir assets/js-lib",
     "dev": "npx live-server --port=10006"
   },
   "keywords": [],

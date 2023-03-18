@@ -7,17 +7,17 @@
     ],
     "module": "ES2020",
     "moduleResolution": "NodeNext",
-    "rootDir": "ts",
-    "outDir": "js",
+    "rootDir": "assets/ts",
+    "outDir": "assets/js-lib",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true
   },
   "include": [
-    "ts"
+    "assets/ts"
   ],
   "exclude": [
     "node_modules",
-    "js"
+    "assets/js-lib"
   ]
 }
