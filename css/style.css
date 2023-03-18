@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+:root {
+  --bg-green: rgb(14, 111, 111);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: MontSerrat, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: grid;
+  place-items: center;
+  background: var(--bg-green);
+  background: linear-gradient(to right, rgb(35, 122, 87), var(--bg-green));
+
+}
+
+table {
+  border-collapse: collapse;
+  width: min(100%, 550px);
+  filter: drop-shadow(10px 10px 10px rgb(187, 187, 187));
+}
+
+table thead {
+  background-color: rgb(27, 170, 226);
+  color: white;
+}
+
+table th,
+table td {
+  padding: 0.5em;
+}
+
+table th {
+  user-select: none;
+}
+
+table th::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  margin-inline-start: 0.5em;
+}
+
+table th[data-sort-order="0"]::after {
+  content: "-";
+}
+
+table th[data-sort-order="1"]::after,
+table th[data-sort-order="2"]::after {
+  --rotation: 180deg;
+  content: "";
+  height: 0.7em;
+  background-color: currentColor;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  rotate: var(--rotation);
+}
+
+table th[data-sort-order="2"]::after {
+  --rotation: 0deg;
+}
+
+table tbody tr {
+  background-color: rgb(228, 246, 255);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgb(190, 237, 255);
+}
+
+table tbody td:nth-child(2),
+table tbody td:nth-child(3) {
+  text-align: center;
+}
