@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx tsc && npx babel assets/js-lib --out-dir assets/js-lib",
+    "build": "npx tsc && npx babel assets/js/lib --out-dir assets/js/lib",
+    "bundle": "npm run build && npx webpack --config webpack.config.js",
     "dev": "npx live-server --port=10006"
   },
   "keywords": [],
@@ -15,7 +16,10 @@
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-typescript": "^7.21.0",
+    "babel-loader": "^9.1.2",
     "live-server": "^1.2.2",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
   }
 }
