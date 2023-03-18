@@ -43,22 +43,19 @@ export default class PlayersTable extends HTMLTableElement {
    * @param {number} index
    */
   #setHeadingClickHandler(heading, index) {
-    let sortOrder = SortOrder.NONE;
-
-    heading.dataset.sortOrder = sortOrder;
-    this.addEventListener("col-sort", ({ detail }) => {
-      if (detail.index !== index)
-        sortOrder = SortOrder.NONE;
-      heading.dataset.sortOrder = sortOrder;
+    const sortOrderProxy = new Proxy({ value: -1, }, {
+      set(target, key, newValue) {
+        target[key] = newValue;
+        heading.dataset.sortOrder = newValue;
+        return true;
+      }
     });
+    sortOrderProxy.value = SortOrder.NONE;
 
     heading.addEventListener("click", () => {
-      sortOrder = ++sortOrder % 3;
-      this.dispatchEvent(new CustomEvent("col-sort", {
-        detail: { index }
-      }));
+      sortOrderProxy.value = ++sortOrderProxy.value % 3;
 
-      switch (sortOrder) {
+      switch (sortOrderProxy.value) {
         case SortOrder.ASCENDING:
           this.#players.sort((a, b) => this.#columns[index].sortFn(a, b));
           break;
