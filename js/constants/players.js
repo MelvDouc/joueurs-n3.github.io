@@ -58,6 +58,21 @@ const players = [
     rating: 1987,
     ffeId: "C00451"
   },
+  {
+    name: "BONAFEDE Jérôme",
+    rating: 2046,
+    ffeId: "M00414"
+  },
+  {
+    name: "BONAFEDE Sasha",
+    rating: 1467,
+    ffeId: "U60513"
+  },
+  {
+    name: "GALLAS Gautier",
+    rating: 1580,
+    ffeId: "C51638",
+  }
 ];
 
 export default players;
