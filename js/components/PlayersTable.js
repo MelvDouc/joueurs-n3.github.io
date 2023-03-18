@@ -47,9 +47,9 @@ export default class PlayersTable extends HTMLTableElement {
 
     heading.dataset.sortOrder = sortOrder;
     this.addEventListener("col-sort", ({ detail }) => {
-      heading.dataset.sortOrder = (detail.index !== index)
-        ? SortOrder.NONE
-        : sortOrder;
+      if (detail.index !== index)
+        sortOrder = SortOrder.NONE;
+      heading.dataset.sortOrder = sortOrder;
     });
 
     heading.addEventListener("click", () => {
