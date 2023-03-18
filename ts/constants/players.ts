@@ -1,3 +1,5 @@
+import { Player } from "../types.js";
+
 const players = [
   {
     name: "ORTEGA François",
@@ -73,6 +75,6 @@ const players = [
     rating: 1580,
     ffeId: "C51638",
   }
-];
+] as Player[];
 
 export default players;

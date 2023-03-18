@@ -1,3 +1,5 @@
+import { Column } from "../types.js";
+
 const columns = [
   {
     name: "NOM Prénom",
@@ -14,6 +16,6 @@ const columns = [
     prop: "ffeId",
     sortFn: (a, b) => a.ffeId.localeCompare(b.ffeId)
   },
-];
+] as Readonly<Column[]>;
 
 export default columns;
